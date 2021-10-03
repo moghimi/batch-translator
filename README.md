@@ -3,7 +3,7 @@
 I will be periodically updating this repository with useful python programs. 
 
 ## Batch Translator
-It is a simple code to retrieve related information such as definition, translation, synonyms and, antonyms for given words list. Words are read from a text file named 'words.txt' which is located in same path as the python file. After processing words, retrieved infomation will be saved into a CSV file named 'words.csv'. 
+It is a simple code to retrieve related information such as definition, translation, synonyms and, antonyms for given words list. Words are read from a text file named 'words.txt' which is located in same path as the python file. After processing words, retrieved information will be saved into a CSV file named 'words.csv'. 
 
 
 ## Contributing
