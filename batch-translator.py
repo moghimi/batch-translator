@@ -3,13 +3,19 @@
 # This is a simple code to retrieve related information such as definition, translation, synonyms and, antonyms for given words list.
 # I assumed the source language is English and the target is Persian.
 # Change source and target languages as you like.
+#
+# - Version history
+# 1.1 Added pronunciation to result list
+# 1.0 Initialized with base features
+#
 
 import nltk
 from nltk.corpus import wordnet
 from deep_translator import GoogleTranslator
 import csv 
+import eng_to_ipa as pronunce
 
-header = ['word', 'definition', 'translation', 'synonyms', 'antonyms', 'examples']
+header = ['word', 'phonetic', 'definition', 'translation', 'synonyms', 'antonyms', 'examples']
 data = []
 
 print("Processing words...")
@@ -40,7 +46,7 @@ with open('words.csv', 'w', encoding='utf-8', newline='') as w:
             line = f.readline().strip()
             examples = ('\n'.join(examples)).replace("_", "\n")
             examples = '\n'.join([s for s in examples.splitlines() if s])
-            data = [word, '\n'.join(set(definition)), translate, ' / '.join(set(synonyms)), ' / '.join(set(antonyms)), examples]
+            data = [word, pronunce.convert(word), '\n'.join(set(definition)), translate, ', '.join(set(synonyms)), ', '.join(set(antonyms)), examples]
             writer.writerow(data)
 
             
