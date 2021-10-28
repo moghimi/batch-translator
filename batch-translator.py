@@ -8,9 +8,16 @@ import nltk
 from nltk.corpus import wordnet
 from deep_translator import GoogleTranslator
 import csv 
+import os.path
+import sys 
 
 header = ['word', 'definition', 'translation', 'synonyms', 'antonyms', 'examples']
 data = []
+input_file = 'words.txt'
+output_file = 'words.csv'
+
+if not os.path.exists(input_file):
+    sys.exit('Input file not found!')  
 
 print("Processing words...")
 count = sum(1 for line in open('words.txt'))
