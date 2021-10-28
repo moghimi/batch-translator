@@ -1,0 +1,4 @@
+deep-translator==1.5.4
+eng-to-ipa==0.0.2
+googletrans==3.0.0
+nltk==3.6.4
